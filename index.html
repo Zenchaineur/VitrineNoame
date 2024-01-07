@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mosaïque d'Images</title>
+    <link rel="stylesheet" href="charte.css"> <!-- Ajout de la référence à la feuille de style "charte.css" -->
+    <style>
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            max-width: 800px; /* Ajustez la largeur maximale de la mosaïque selon vos besoins */
+            margin: 0 auto; /* Pour centrer la mosaïque sur la page */
+        }
+    
+        .image-container img {
+            width: 100%;
+            height: auto;
+            max-width: 100%; /* Limite la largeur des images à 100% de la largeur du conteneur */
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="noir">Couleur</div>
+<div class="jaune">Jaune</div>
+<div class="vert">Vert</div>
+<div class="image-container" id="imageContainer"></div>
+
+<script>
+    // Ajoutez les images à la mosaïque
+    const imageContainer = document.getElementById("imageContainer");
+
+    for (let i = 1; i <= 20; i++) {
+        const img = document.createElement("img");
+        img.src = `images/${i}.jpg`;
+        img.alt = `Image ${i}`;
+        imageContainer.appendChild(img);
+    }
+</script>
+
+</body>
+</html>
