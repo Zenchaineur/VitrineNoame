@@ -1,14 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #D9D9D9;
+}
+
+.header {
+    text-align: center; /* Centrage horizontal */
+    padding: 20px;
+    background-color: #fff; /* Ajout d'une couleur de fond */
+    color: #010101; /* Couleur de texte pour le contenu du header */
+    margin-top: 70px; /* Ajoute une marge au-dessus du header */
+}
+
+.header-content {
+    display: inline-block; /* Permet de centrer le texte */
+    text-align: left; /* Justification à gauche */
+}
+
+.header .vert, .header .noir {
+    display: inline;
+}
+
+.subtitle {
+    color: #19a123;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.arriere-plan {
+    background-color: #D9D9D9;
+}
+
 /* noir */
 .noir {
     color: #010101;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: normal;
+    font-size: 2em;
 }
 
 /* vert */
 .vert {
     color: #19a123;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
 }
 
 /* jaune */
 .jaune {
     color: #e6ff34;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: xx-large;
+}
+
+/*Conteneur des mosaïques*/
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    max-width: 800px; /* Ajustez la largeur maximale de la mosaïque selon vos besoins */
+    margin: 0 auto; /* Pour centrer la mosaïque sur la page */
+}
+
+/*image mosaïque*/
+.image-container img {
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* Limite la largeur des images à 100% de la largeur du conteneur */
+    border-radius: 8px;
+}
+
+.image-1 {
+    width: 100%;
+    top: 30%;
+    left: 0;
+    transform: translate(20%, -50%);
+}
+
+.image-2 {
+    width: 50%;
+    top: 20%;
+    right: 20%;
+    transform: translate(-70%, 15%);
+}
+
+.image-3 {
+    width: 50%;
+    bottom: 0;
+    left: 70%;
+    transform: translate(17%, 23%);
+}
+
+.special-image {
+    /* Style spécifique pour les images générées dynamiquement */
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 0px;
+}
+
+.dropdown-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: linear-gradient(to bottom, #1B8F2E, #000000); /* Dégradé de couleur pour le fond */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+    white-space: nowrap;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: white;
+    white-space: nowrap; /* Empêche les éléments de se casser sur plusieurs lignes */
+    font-family: Stencil Std, fantasy;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.menu-container:hover .dropdown-content {
+    display: block;
+}
+
+.large-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 20px; /* Ajuste la marge en fonction de vos besoins */
 }

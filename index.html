@@ -6,27 +6,36 @@
     <title>Mosaïque d'Images</title>
     <link rel="stylesheet" href="charte.css"> <!-- Ajout de la référence à la feuille de style "charte.css" -->
     <style>
-        .image-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            max-width: 800px; /* Ajustez la largeur maximale de la mosaïque selon vos besoins */
-            margin: 0 auto; /* Pour centrer la mosaïque sur la page */
-        }
-    
-        .image-container img {
-            width: 100%;
-            height: auto;
-            max-width: 100%; /* Limite la largeur des images à 100% de la largeur du conteneur */
-            border-radius: 8px;
-        }
+
     </style>
 </head>
 <body>
-<div class="noir">Couleur</div>
-<div class="jaune">Jaune</div>
-<div class="vert">Vert</div>
-<div class="image-container" id="imageContainer"></div>
+    <div class="menu-container">
+        <button class="dropdown-btn">Menu</button>
+        <div class="dropdown-content">
+            <!-- Ajoutez ici les éléments de votre menu déroulant -->
+            <div></div>
+            <a href="#">SOCIOLOGIE DE TROTTOIR</a>
+            <a href="#">CRITIQUES</a>
+            <a href="#">GO-POLIS</a>
+            <a href="#">IMPROVISATION</a>
+            <a href="#">ANECDOTES</a>
+            <div></div>
+            <a href="#">MERCH</a>
+            <a href="#">PLAYLIST</a>
+            <a href="#">HISTOIRE</a>
+            <a href="#">CONTACT</a>
+            <a href="#">logo / insta</a>
+        </div>
+    </div>
+<div class="header">
+    <div class="header-content">
+        <h1><div class="vert">MÉDIA</div> <div class="noir">NOÛS</div></h1>
+        <div class="vert">INDÉPENDANT ET</div>
+        <div class="vert">IMPARFAIT</div>
+    </div>
+</div>
+<img class="large-image" src="premiertestnoame.png" alt="Grande Image">
 
 <script>
     // Ajoutez les images à la mosaïque
@@ -36,6 +45,19 @@
         const img = document.createElement("img");
         img.src = `images/${i}.jpg`;
         img.alt = `Image ${i}`;
+        // Ajoute la classe "special-image" à certaines images générées dynamiquement
+        if (i % 5 === 0) {
+            img.classList.add("special-image");
+        }
+        else if(i % 3 === 0){
+            img.classList.add("image-1");
+        }
+        else if(i % 3 === 1){
+            img.classList.add("image-2");
+        }
+        else{
+            img.classList.add("image-3");
+        }
         imageContainer.appendChild(img);
     }
 </script>
